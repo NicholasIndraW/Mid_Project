@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// read
+Route::get('/', 'ArticleController@index');
+
+// insert
+Route::get('/create', 'ArticleController@create');
+Route::post('/stores', 'ArticleController@store');
+Route::get('/update/{id}', 'ArticleController@edit');
+Route::put('/update/{id}', 'ArticleController@update');
+Route::delete('/delete/{id}', 'ArticleController@destroy');
